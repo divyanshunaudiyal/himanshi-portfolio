@@ -1,0 +1,74 @@
+header.header {
+  position: fixed;
+  left: 1.5rem;
+  // top: 0;
+  width: max-content;
+  .header-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; //for &::after
+    &::before {
+      content: "";
+      height: 35%;
+      width: 5px;
+      background: rgb(34, 101, 120);
+      background: rgb(156, 114, 9);
+      position: absolute;
+      top: 0;
+      border-radius: 50%;
+    }
+    &::after {
+      content: "";
+      height: 25%;
+      width: 5px;
+      background: rgb(156, 114, 9);
+      position: absolute;
+      bottom: 0;
+      border-radius: 50%;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 10vh;
+
+      a {
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        background: rgb(241, 226, 190);
+        transition: 0.5s;
+        position: relative;
+
+        span {
+          position: absolute;
+          top: 25%;
+          left: 3.25rem;
+          opacity: 0;
+          transition: 1s;
+          font-size: 14px;
+        }
+
+        svg {
+          padding: 1rem;
+          transform: scale(1.2);
+        }
+        &:hover {
+          background: rgb(201, 169, 90); /* Change background color on hover */
+          span {
+            opacity: 0.25;
+          }
+          svg {
+            transition: transform 0.5s; /* Add transition property for transform */
+            transform: scale(1.75);
+          }
+        }
+      }
+    }
+  }
+}

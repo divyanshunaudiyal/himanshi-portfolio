@@ -1,0 +1,20 @@
+body {
+  background: rgb(183, 169, 133);
+  font-family: "Nunito", sans-serif;
+  overflow: hidden;
+}
+section {
+  width: 80%; //for header not overlapping section, since header's fixed
+  margin: 0 auto; // align center on x axis
+  //   background: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
