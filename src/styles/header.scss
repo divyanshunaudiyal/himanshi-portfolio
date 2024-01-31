@@ -52,6 +52,7 @@ header.header {
           opacity: 0;
           transition: 1s;
           font-size: 14px;
+          color: rgb(0, 0, 0);
         }
 
         svg {
@@ -61,13 +62,37 @@ header.header {
         &:hover {
           background: rgb(201, 169, 90); /* Change background color on hover */
           span {
-            opacity: 0.25;
+            opacity: 0.5;
           }
           svg {
             transition: transform 0.5s; /* Add transition property for transform */
             transform: scale(1.75);
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    width: 100vw !important;
+    top: 0;
+    left: initial !important;
+    // z-index: 1; //always on top
+
+    &-container {
+      margin: 0 auto;
+      display: block !important;
+      height: initial !important;
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      nav {
+        flex-direction: row !important;
+        margin-top: 10px !important;
       }
     }
   }

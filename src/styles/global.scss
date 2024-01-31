@@ -1,11 +1,14 @@
 body {
   background: rgb(183, 169, 133);
   font-family: "Nunito", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  // scroll-behavior: smooth;
 }
 section {
   width: 80%; //for header not overlapping section, since header's fixed
+  height: 100vh;
   margin: 0 auto; // align center on x axis
+  // overflow-y: hidden;
   //   background: white;
 }
 h1,
@@ -17,4 +20,54 @@ h6,
 p {
   padding: 0;
   margin: 0;
+}
+@mixin question {
+  position: absolute;
+  top: -20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  hr {
+    animation: widthChange 1s forwards;
+    border: 0.5px solid black;
+  }
+}
+
+@mixin left-col {
+  //left side text each component/section
+  width: 50%; //width 50% for text container
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative; // for question paragraph
+}
+
+@mixin h1 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 60px;
+  span {
+    color: rgb(153, 92, 11);
+  }
+}
+@mixin description {
+  font-weight: 500;
+  margin-left: 5px;
+  font-size: 1.75rem;
+  span {
+    text-transform: uppercase;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+  color: inherit;
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    width: 100%;
+  }
 }

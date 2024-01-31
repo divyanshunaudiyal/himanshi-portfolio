@@ -9,27 +9,37 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <nav>
-          <ScrollLink to="" className="homepage">
+          <ScrollLink
+            to="home"
+            className="homepage"
+            smooth={true}
+            duration={750}
+          >
             <ImHome3 />
             <span>home</span>
           </ScrollLink>
 
-          <ScrollLink to="" className="about">
+          <ScrollLink to="about" className="about" smooth={true} duration={750}>
             <BsPersonStandingDress />
             <span>about</span>
           </ScrollLink>
 
-          <ScrollLink to="" className="experience">
+          <ScrollLink to="" className="experience" smooth={true} duration={750}>
             <PiBagFill />
             <span>experience</span>
           </ScrollLink>
 
-          <ScrollLink to="" className="projects">
+          <ScrollLink
+            to="projects"
+            className="projects"
+            smooth={true}
+            duration={750}
+          >
             <IoLaptop />
             <span>projects</span>
           </ScrollLink>
 
-          <ScrollLink to="" className="education">
+          <ScrollLink to="" className="education" smooth={true} duration={750}>
             <IoBookSharp />
             <span>education</span>
           </ScrollLink>

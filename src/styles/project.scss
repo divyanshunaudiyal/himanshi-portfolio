@@ -1,0 +1,58 @@
+@use "./global.scss" as *;
+section.projects {
+  position: relative;
+  .flex {
+    margin: 2rem 0;
+    display: flex;
+    gap: 2rem;
+
+    img {
+      // width: 20rem;
+      height: 17rem; // keep image to size of text beside manually
+    }
+  }
+  .project_text {
+    width: 50%;
+    position: relative;
+    margin-top: 2rem; //overflox-y is hidden for each section this prevents class question from not viewing
+
+    div.question {
+      @include question;
+    }
+    .description {
+      @include description;
+    }
+    h1 {
+      @include h1;
+    }
+  }
+
+  .project_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    .project {
+      height: 50vh; //to be changed
+      width: 100%;
+      border-radius: 2rem;
+      background: rgb(100, 65, 0);
+    }
+  }
+}
+
+@keyframes infiniteCircle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+// @keyframes slideTopToBottom {
+//   from {
+//     transform: translateY(0);
+//   }
+//   to {
+//     transform: translateY(10px);
+//   }
+// }

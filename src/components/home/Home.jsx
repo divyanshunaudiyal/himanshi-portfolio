@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import { ImFacebook, ImGithub, ImInstagram } from "react-icons/im";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 function Home() {
   const jobTitle = "Full Stack Developer";
   const [displayedTitle, setDisplayedTitle] = useState("");
@@ -18,14 +19,18 @@ function Home() {
       clearInterval(interval);
     }; // Cleanup on component unmount
   }, [displayedTitle, jobTitle]);
-
+  const homeRef = useRef();
   return (
-    <section className="home">
-      <div className="home_text">
+    <section className="home" ref={homeRef}>
+      <div className="home_text left-column_text">
+        <div className="question ">
+          <hr />
+          <h6>who is she ?</h6>
+        </div>
         <h1>Himanshi Tiwari</h1>
-        <h4>
+        <p className="description">
           I am a <span className="text-change">{displayedTitle}</span>
-        </h4>
+        </p>
         <p className="social-links">
           <a href="" className="insta" target="blank">
             <FaInstagram />
@@ -38,6 +43,9 @@ function Home() {
           </a>
           <a href="" className="linkedin" target="blank">
             <FaLinkedin />
+          </a>
+          <a href="" className="mail" target="blank">
+            <SiGmail />
           </a>
         </p>
         <button className="download-btn">Download resume</button>
