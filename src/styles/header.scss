@@ -1,8 +1,10 @@
 header.header {
   position: fixed;
   left: 1.5rem;
+  z-index: 1;
   // top: 0;
   width: max-content;
+  background: rgb(183, 169, 133);
   .header-container {
     height: 100vh;
     display: flex;
@@ -47,11 +49,12 @@ header.header {
 
         span {
           position: absolute;
-          top: 25%;
+          top: 18px;
           left: 3.25rem;
           opacity: 0;
           transition: 1s;
-          font-size: 14px;
+          font-size: 12px;
+          text-transform: uppercase;
           color: rgb(0, 0, 0);
         }
 
@@ -76,11 +79,12 @@ header.header {
 
 @media screen and (max-width: 600px) {
   .header {
+    padding: 0 0 1rem 0;
     width: 100vw !important;
     top: 0;
-    left: initial !important;
-    // z-index: 1; //always on top
-
+    left: 0 !important;
+    background: transparent;
+    box-shadow: 1px 1px 30px rgb(216, 163, 102);
     &-container {
       margin: 0 auto;
       display: block !important;

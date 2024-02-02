@@ -22,12 +22,12 @@ function Projects() {
         {/* <iframe src="https://lottie.host/embed/fbb03df9-cd80-46d3-9ce5-d2faa0b33e0b/UcuUlJCW4C.json"></iframe> */}
       </div>
       <div className="project_container">
-        <div className="project project1"></div>
-        <div className="project project1"></div>
-        <div className="project project1"></div>
-        <div className="project project1"></div>
-        <div className="project project1"></div>
-        <div className="project project1"></div>
+        <div className="project project1 "></div>
+        <div className="project project2"></div>
+        <div className="project project3"></div>
+        <div className="project project4"></div>
+        <div className="project project5"></div>
+        <div className="project project6"></div>
       </div>
     </section>
   );

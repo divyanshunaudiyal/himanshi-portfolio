@@ -12,10 +12,10 @@ section.projects {
     }
   }
   .project_text {
-    width: 50%;
-    position: relative;
-    margin-top: 2rem; //overflox-y is hidden for each section this prevents class question from not viewing
-
+    // width: 50%;
+    // position: relative;
+    // margin-top: 2rem; //overflox-y is hidden for each section this prevents class question from not viewing
+    @include section-text;
     div.question {
       @include question;
     }
@@ -48,11 +48,32 @@ section.projects {
     transform: rotate(360deg);
   }
 }
-// @keyframes slideTopToBottom {
-//   from {
-//     transform: translateY(0);
-//   }
-//   to {
-//     transform: translateY(10px);
-//   }
-// }
+
+@media screen and (max-width: 600px) {
+  section.projects {
+    margin-top: 3rem;
+    .flex {
+      flex-direction: column;
+      gap: 0; // space bw text and image
+
+      img {
+        // height: 100%; // keep image to size of text beside manually
+        display: none;
+      }
+    }
+    .project_text {
+      width: 100%;
+      margin-top: 0rem;
+    }
+
+    .project_container {
+      grid-template-columns: auto;
+      gap: 1rem;
+
+      .project {
+        height: 25vh; //to be changed
+      }
+      //from here
+    }
+  }
+}

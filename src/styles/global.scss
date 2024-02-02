@@ -6,10 +6,13 @@ body {
 }
 section {
   width: 80%; //for header not overlapping section, since header's fixed
-  height: 100vh;
   margin: 0 auto; // align center on x axis
-  // overflow-y: hidden;
-  //   background: white;
+  height: 100vh;
+  @media screen and (max-width: 600px) {
+    height: max-content; //from 100vh that causes
+    // margin-top: 5%; //since home container is flex and content is center which creates space , so this creates extra space,manually set for each section
+    overflow-y: hidden;
+  }
 }
 h1,
 h2,
@@ -29,18 +32,9 @@ p {
   gap: 5px;
 
   hr {
-    animation: widthChange 1s forwards;
     border: 0.5px solid black;
+    animation: lineAnimation 1s infinite alternate;
   }
-}
-
-@mixin left-col {
-  //left side text each component/section
-  width: 50%; //width 50% for text container
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  position: relative; // for question paragraph
 }
 
 @mixin h1 {
@@ -50,6 +44,10 @@ p {
   span {
     color: rgb(153, 92, 11);
   }
+  @media (max-width: 900px) {
+    // changing from 600 to 900
+    font-size: 31px;
+  }
 }
 @mixin description {
   font-weight: 500;
@@ -57,6 +55,12 @@ p {
   font-size: 1.75rem;
   span {
     text-transform: uppercase;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 601px) and (max-width: 900px) {
+    font-size: 18px;
   }
 }
 
@@ -66,8 +70,26 @@ button {
   color: inherit;
 }
 
-@media screen and (max-width: 600px) {
-  section {
-    width: 100%;
+@mixin section-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  width: 50%;
+
+  @media screen and (max-width: 600px) {
+    gap: 1rem;
+  }
+  @media (min-width: 601px) and (max-width: 900px) {
+    gap: 1.25rem;
+  }
+}
+
+@keyframes lineAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 6rem;
   }
 }

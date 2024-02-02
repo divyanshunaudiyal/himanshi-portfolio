@@ -23,7 +23,7 @@ function Home() {
   return (
     <section className="home" ref={homeRef}>
       <div className="home_text left-column_text">
-        <div className="question ">
+        <div className="question">
           <hr />
           <h6>who is she ?</h6>
         </div>
