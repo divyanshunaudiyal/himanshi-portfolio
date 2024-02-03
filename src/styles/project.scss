@@ -30,12 +30,26 @@ section.projects {
   .project_container {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 1rem;
+    gap: 2rem;
     .project {
-      height: 50vh; //to be changed
-      width: 100%;
-      border-radius: 2rem;
+      height: 15rem; //to be changed
+      width: 35rem; //earlier 100%, specifying manual width for each project
+      border-radius: 1rem;
       background: rgb(100, 65, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // transform-style: preserve-3d;
+      transition: transform 0.2s;
+      &:hover {
+        transition: 0.5s;
+        box-shadow: 1px 1px 20px rgb(152, 78, 8);
+      }
+
+      img {
+        // width: 50%;
+        height: inherit;
+      }
     }
   }
 }

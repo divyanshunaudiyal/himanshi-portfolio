@@ -2,9 +2,27 @@ import { useRef } from "react";
 
 function Projects() {
   const projectsRef = useRef();
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    const container = projectsRef.current;
+    const rect = container.getBoundingClientRect();
+    const x = (event.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const y = (event.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+
+    // setMousePosition({ x, y });
+
+    event.target.style.transform = `rotateX(${y * 15}deg) rotateY(${
+      -x * 15
+    }deg) scale(1.05)`;
+  };
+
+  const handleMouseLeave = (e) => {
+    e.target.style.transform = "rotateX(0) rotateY(0) scale(1)"; //back to normal on mouse leave
+  };
 
   return (
-    <section className="projects" ref={projectsRef} id="projects">
+    <section className="projects" id="projects">
       <div className="flex">
         <div className="project_text left-col">
           <div className="question">
@@ -19,15 +37,40 @@ function Projects() {
           </h1>
         </div>
         <img src="./work.png" alt="work" />
-        {/* <iframe src="https://lottie.host/embed/fbb03df9-cd80-46d3-9ce5-d2faa0b33e0b/UcuUlJCW4C.json"></iframe> */}
       </div>
-      <div className="project_container">
-        <div className="project project1 "></div>
-        <div className="project project2"></div>
-        <div className="project project3"></div>
-        <div className="project project4"></div>
-        <div className="project project5"></div>
-        <div className="project project6"></div>
+      <div className="project_container" ref={projectsRef}>
+        <div
+          className="project project1"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* <img src="./home.jpeg" alt="" /> */}
+        </div>
+        <div
+          className="project project2"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        ></div>
+        <div
+          className="project project3"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        ></div>
+        <div
+          className="project project4"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        ></div>
+        <div
+          className="project project5"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        ></div>
+        <div
+          className="project project6"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        ></div>
       </div>
     </section>
   );
