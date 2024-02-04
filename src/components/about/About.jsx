@@ -3,32 +3,10 @@ import { useRef } from "react";
 function About() {
   const aboutRef = useRef();
 
-  // const [isScrolled, setIsScrolled] = useState(false);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const boundingBox = document
-  //       .querySelector(".about")
-  //       .getBoundingClientRect();
-
-  //     if (boundingBox.top < window.innerHeight && boundingBox.bottom >= 0) {
-  //       setIsScrolled(true);
-  //     } else {
-  //       setIsScrolled(false);
-  //     }
-  //   };
-  //   // Add event listener for the scroll event
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Remove the event listener when the component is unmounted
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
     <section className="about" ref={aboutRef} id="about">
       <div className="about_text">
-        <div className={`question`}>
+        <div className="question">
           <hr />
           <h6>what does she do?</h6>
         </div>

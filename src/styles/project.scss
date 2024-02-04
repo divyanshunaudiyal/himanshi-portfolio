@@ -1,8 +1,9 @@
 @use "./global.scss" as *;
 section.projects {
   position: relative;
+  height: max-content; //height is 100vh for every section
   .flex {
-    margin: 2rem 0;
+    margin: 0 0 2rem 0; //for space from  bottom  (projects)
     display: flex;
     gap: 2rem;
 
@@ -12,8 +13,6 @@ section.projects {
     }
   }
   .project_text {
-    // width: 50%;
-    // position: relative;
     // margin-top: 2rem; //overflox-y is hidden for each section this prevents class question from not viewing
     @include section-text;
     div.question {
@@ -30,36 +29,48 @@ section.projects {
   .project_container {
     display: grid;
     grid-template-columns: auto auto;
+    // grid-template-columns: auto;
     gap: 2rem;
     .project {
-      height: 15rem; //to be changed
-      width: 35rem; //earlier 100%, specifying manual width for each project
-      border-radius: 1rem;
-      background: rgb(100, 65, 0);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      // transform-style: preserve-3d;
-      transition: transform 0.2s;
+      //for each project
+      box-sizing: border-box;
+      height: 18rem;
+      width: 80%;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 3rem;
+      cursor: pointer;
       &:hover {
-        transition: 0.5s;
+        transition: 0.2s;
         box-shadow: 1px 1px 20px rgb(152, 78, 8);
       }
-
-      img {
-        // width: 50%;
-        height: inherit;
-      }
     }
-  }
-}
+    .project1 {
+      background: url("public/nba.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
 
-@keyframes infiniteCircle {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
+      // position: relative;
+      // backdrop-filter: blur(500px);
+
+      // &:hover::after {
+      //   content: "nbastore.in";
+      //   position: absolute;
+      //   // height: 100%;
+      //   // width: 100%;
+      //   background: rgb(127, 104, 62);
+
+      //   // display: flex;
+      //   font-size: 5rem;
+      // }
+    }
+    .project2 {
+      background: url("public/whitepole.png");
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -85,9 +96,29 @@ section.projects {
       gap: 1rem;
 
       .project {
+        width: 100%;
         height: 25vh; //to be changed
       }
       //from here
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  section.projects {
+    // .flex {
+    //   img {
+    //   }
+    // }
+    // .project_text {
+    // }
+
+    .project_container {
+      grid-template-columns: auto;
+
+      .project {
+        width: 100%;
+      }
     }
   }
 }

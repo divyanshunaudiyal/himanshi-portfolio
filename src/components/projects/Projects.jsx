@@ -1,4 +1,8 @@
 import { useRef } from "react";
+const projectsArray = [
+  { name: "project1", url: "https://www.nbastore.in/" },
+  { name: "project2", url: "hhttps://www.thewhitepole.com/" },
+];
 
 function Projects() {
   const projectsRef = useRef();
@@ -12,8 +16,8 @@ function Projects() {
 
     // setMousePosition({ x, y });
 
-    event.target.style.transform = `rotateX(${y * 15}deg) rotateY(${
-      -x * 15
+    event.target.style.transform = `rotateX(${y * 10}deg) rotateY(${
+      -x * 10
     }deg) scale(1.05)`;
   };
 
@@ -48,26 +52,6 @@ function Projects() {
         </div>
         <div
           className="project project2"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        ></div>
-        <div
-          className="project project3"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        ></div>
-        <div
-          className="project project4"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        ></div>
-        <div
-          className="project project5"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        ></div>
-        <div
-          className="project project6"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         ></div>

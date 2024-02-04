@@ -44,7 +44,11 @@ function Home() {
           <a href="" className="linkedin" target="blank">
             <FaLinkedin />
           </a>
-          <a href="" className="mail" target="blank">
+          <a
+            href="mailto:div.naudiyal@gmail.com"
+            className="mail"
+            target="blank"
+          >
             <SiGmail />
           </a>
         </p>

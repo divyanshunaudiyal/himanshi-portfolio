@@ -3,7 +3,7 @@ import { ImHome3 } from "react-icons/im";
 import { BsPersonStandingDress } from "react-icons/bs";
 import { PiBagFill } from "react-icons/pi";
 import { IoLaptop } from "react-icons/io5";
-import { IoBookSharp } from "react-icons/io5";
+import { BiSolidContact } from "react-icons/bi";
 function Header() {
   return (
     <header className="header">
@@ -24,11 +24,6 @@ function Header() {
             <span>about</span>
           </ScrollLink>
 
-          <ScrollLink to="" className="experience" smooth={true} duration={750}>
-            <PiBagFill />
-            <span>experience</span>
-          </ScrollLink>
-
           <ScrollLink
             to="projects"
             className="projects"
@@ -39,9 +34,19 @@ function Header() {
             <span>projects</span>
           </ScrollLink>
 
+          <ScrollLink
+            to="experience"
+            className="experience"
+            smooth={true}
+            duration={750}
+          >
+            <PiBagFill />
+            <span>experience</span>
+          </ScrollLink>
+
           <ScrollLink to="" className="education" smooth={true} duration={750}>
-            <IoBookSharp />
-            <span>education</span>
+            <BiSolidContact />
+            <span>contact</span>
           </ScrollLink>
         </nav>
       </div>
