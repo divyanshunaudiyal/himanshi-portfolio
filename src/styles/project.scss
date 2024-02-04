@@ -76,19 +76,18 @@ section.projects {
 
 @media screen and (max-width: 600px) {
   section.projects {
-    margin-top: 3rem;
+    margin-top: 4rem;
     .flex {
       flex-direction: column;
       gap: 0; // space bw text and image
 
       img {
-        // height: 100%; // keep image to size of text beside manually
         display: none;
       }
     }
     .project_text {
       width: 100%;
-      margin-top: 0rem;
+      margin-top: 1rem; //for question to view
     }
 
     .project_container {
@@ -99,20 +98,12 @@ section.projects {
         width: 100%;
         height: 25vh; //to be changed
       }
-      //from here
     }
   }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
   section.projects {
-    // .flex {
-    //   img {
-    //   }
-    // }
-    // .project_text {
-    // }
-
     .project_container {
       grid-template-columns: auto;
 

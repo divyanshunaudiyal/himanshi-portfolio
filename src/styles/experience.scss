@@ -55,3 +55,42 @@ section.experience {
     }
   }
 }
+
+@media (max-width: 600px) {
+  section.experience {
+    margin-top: 4rem;
+    flex-direction: column;
+    .experience_text {
+      width: 100%;
+      margin-top: 1rem; //overflox-y is hidden for each section this prevents class question from not viewing
+    }
+    .experience_companies {
+      width: 100%;
+      grid-template-columns: auto;
+      gap: 2rem;
+
+      .company1,
+      .company2 {
+        width: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  section.experience {
+    // margin-top: 4rem;
+    flex-direction: column;
+    .experience_text {
+      width: 100%;
+    }
+    .experience_companies {
+      width: 100%;
+      gap: 2rem;
+
+      .company1,
+      .company2 {
+        // width: 100%;
+      }
+    }
+  }
+}
